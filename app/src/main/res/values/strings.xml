@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Alatreon</string>
+    <!-- Login fragment resources -->
     <string name="error_loading_data">Invalid user or password. Please check your credentials</string>
     <string name="user">User</string>
     <string name="user_hint">E-mail</string>
@@ -9,6 +10,7 @@
     <string name="company_logo_desc">Company logo</string>
     <string name="tv_login">Login</string>
     <string name="error_loading_movies">Error loading information. Please try again later.</string>
+    <!-- Main activity resources -->
     <string name="menu_label_popular">Popular</string>
     <string name="menu_label_top_rated">Top rated</string>
     <string name="menu_label_upcoming">Upcoming</string>
