@@ -49,7 +49,21 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    // Navigation
+    //Fragment
     implementation(libs.androidx.navigation.fragment.ktx)
+    //Navigation
     implementation(libs.androidx.navigation.ui.ktx)
+    //Interceptor
+    implementation(libs.logging.interceptor)
+    //SwipeRefreshLayout
+    implementation(libs.androidx.swiperefreshlayout)
+    //RecyclerView
+    implementation(libs.recyclerview.v7)
+    implementation(libs.androidx.recyclerview)
+    //Glide
+    implementation(libs.glide)
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.adapter.rxjava2)
 }
