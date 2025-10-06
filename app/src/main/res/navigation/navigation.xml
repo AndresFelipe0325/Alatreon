@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/popularMoviesFragment"
-        android:name="com.andrew.alatreon.ui.PopularMoviesFragment"
+        android:name="com.andrew.alatreon.ui.fragment.PopularMoviesFragment"
         android:label="fragment_popular_movies"
         tools:layout="@layout/fragment_popular_movies" >
         <action
@@ -16,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/movieDetailsFragment"
-        android:name="com.andrew.alatreon.ui.MovieDetailsFragment"
+        android:name="com.andrew.alatreon.ui.fragment.MovieDetailsFragment"
         android:label="fragment_movie_details"
         tools:layout="@layout/fragment_movie_details" />
     <fragment
         android:id="@+id/upcomingMoviesFragment"
-        android:name="com.andrew.alatreon.ui.UpcomingMoviesFragment"
+        android:name="com.andrew.alatreon.ui.fragment.UpcomingMoviesFragment"
         android:label="fragment_upcoming_movies"
         tools:layout="@layout/fragment_upcoming_movies" >
         <action
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/topRatedMoviesFragment"
-        android:name="com.andrew.alatreon.ui.TopRatedMoviesFragment"
+        android:name="com.andrew.alatreon.ui.fragment.TopRatedMoviesFragment"
         android:label="fragment_top_rated_movies"
         tools:layout="@layout/fragment_top_rated_movies" >
         <action
