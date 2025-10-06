@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("androidx.navigation.safeargs.kotlin") //Apply the Safe Args plugin
 }
 
 android {
@@ -49,21 +48,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    //Fragment
-    implementation(libs.androidx.navigation.fragment.ktx)
+    //Viewmodel
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     //Navigation
+    implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
-    //Interceptor
-    implementation(libs.logging.interceptor)
-    //SwipeRefreshLayout
-    implementation(libs.androidx.swiperefreshlayout)
-    //RecyclerView
-    implementation(libs.recyclerview.v7)
-    implementation(libs.androidx.recyclerview)
-    //Glide
-    implementation(libs.glide)
-    //Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.adapter.rxjava2)
 }

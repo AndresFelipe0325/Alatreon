@@ -6,11 +6,11 @@ interface Logger {
     val tag: String
         get() = javaClass.simpleName
 
-    fun LogDebug(message: String) {
+    fun logDebug(message: String) {
         Log.d(tag, message)
     }
 
-    fun LogError(message: String) {
+    fun logError(message: String) {
         Log.e(tag, message)
     }
 
