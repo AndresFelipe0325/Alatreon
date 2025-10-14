@@ -22,6 +22,7 @@ class TopRatedMoviesFragment : Fragment() {
     ): View? {
         //Inflate the layout for this fragment
         _binding = FragmentTopRatedMoviesBinding.inflate(inflater, container, false)
+        activity?.setTitle("Top Rated Movies")
         //Returning the root view of the fragment
         return binding.root
     }

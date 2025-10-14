@@ -5,13 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class LoginActivityViewModel : ViewModel() {
-    private lateinit var _authSuccess: MutableLiveData<Boolean>
+    private var _authSuccess: MutableLiveData<Boolean> = MutableLiveData()
     val authSuccess: LiveData<Boolean>
         get() = _authSuccess
-    private lateinit var _authError: MutableLiveData<Boolean>
+    private var _authError: MutableLiveData<Boolean> = MutableLiveData()
     val authError: LiveData<Boolean>
         get() = _authError
-    private lateinit var _loading: MutableLiveData<Boolean>
+    private var _loading: MutableLiveData<Boolean> = MutableLiveData()
     val loading: LiveData<Boolean>
         get() = _loading
 

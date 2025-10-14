@@ -22,6 +22,7 @@ class UpcomingMoviesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentUpcomingMoviesBinding.inflate(inflater, container, false)
+        activity?.setTitle("Upcoming Movies")
         //Returning the root view of the fragment
         return binding.root
     }

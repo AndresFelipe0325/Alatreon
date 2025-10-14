@@ -19,6 +19,7 @@ class LoginActivity : AppCompatActivity(), Logger {
     //Attach the viewModel variable
     private val viewModel: LoginActivityViewModel by viewModels()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupView()

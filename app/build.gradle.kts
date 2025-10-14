@@ -51,7 +51,17 @@ dependencies {
     //Viewmodel
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
     //Navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    //Retrofit library
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    //Coroutines
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
+
+    //Logs for http data
+    implementation(libs.logging.interceptor)
 }

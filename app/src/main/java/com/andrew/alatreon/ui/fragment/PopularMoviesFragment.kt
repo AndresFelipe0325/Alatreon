@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import com.andrew.alatreon.databinding.FragmentPopularMoviesBinding
+import com.andrew.alatreon.viewmodel.MainActivityViewModel
+import kotlin.getValue
 
 
 /**
@@ -15,6 +19,8 @@ class PopularMoviesFragment : Fragment() {
     //Binding variable
     private var _binding: FragmentPopularMoviesBinding? = null
     private val binding get() = _binding!!
+    //Attach the viewModel variable
+    private val viewModel: MainActivityViewModel by viewModels()
 
 
     override fun onCreateView(
@@ -23,6 +29,7 @@ class PopularMoviesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentPopularMoviesBinding.inflate(inflater, container, false)
+        activity?.setTitle("Popular Movies")
         //Returning the root view of the fragment
         return binding.root
     }

@@ -14,4 +14,6 @@
     <string name="menu_label_popular">Popular</string>
     <string name="menu_label_top_rated">Top rated</string>
     <string name="menu_label_upcoming">Upcoming</string>
+    <!-- item movie resources -->
+    <string name="image_content_description">Movie image</string>
 </resources>
