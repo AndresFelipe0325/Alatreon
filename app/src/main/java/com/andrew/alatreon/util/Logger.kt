@@ -3,22 +3,22 @@ package com.andrew.alatreon.util
 import android.util.Log
 
 interface Logger {
-    val tag: String
+    val loggerTag: String
         get() = javaClass.simpleName
 
     fun logDebug(message: String) {
-        Log.d(tag, message)
+        Log.d(loggerTag, message)
     }
 
     fun logError(message: String) {
-        Log.e(tag, message)
+        Log.e(loggerTag, message)
     }
 
     fun logWarning(message: String) {
-        Log.w(tag, message)
+        Log.w(loggerTag, message)
     }
 
     fun logInfo(message: String) {
-        Log.i(tag, message)
+        Log.i(loggerTag, message)
     }
 }

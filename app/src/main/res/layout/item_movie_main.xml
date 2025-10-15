@@ -5,6 +5,20 @@
     android:layout_margin="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_15"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_85"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.85"/>
+
     <TextView
         android:id="@+id/movie_title"
         android:layout_width="match_parent"
@@ -20,11 +34,11 @@
     <ImageView
         android:id="@+id/movie_image"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:padding="@dimen/standard_padding"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
         android:contentDescription="@string/image_content_description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gl_vertical_15"
+        app:layout_constraintEnd_toStartOf="@+id/gl_vertical_85"
         app:layout_constraintTop_toBottomOf="@+id/movie_title"
         app:layout_constraintBottom_toBottomOf="parent"/>
 

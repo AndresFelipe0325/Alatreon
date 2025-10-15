@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.internal.Kapt3GradleSubplugin.Companion.findKaptConfiguration
 import java.util.Properties
 
 plugins {
@@ -79,7 +80,11 @@ dependencies {
     //Coroutines
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
-
     //Logs for http data
     implementation(libs.logging.interceptor)
+    //Glide
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+    //swipeRefreshLayout
+    implementation(libs.androidx.swiperefreshlayout)
 }

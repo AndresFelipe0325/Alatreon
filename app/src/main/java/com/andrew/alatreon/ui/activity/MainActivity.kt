@@ -40,12 +40,12 @@ class MainActivity : AppCompatActivity(), Logger {
                 R.id.top_rated_movies -> replaceFragment(TopRatedMoviesFragment())
                 R.id.upcoming_movies -> replaceFragment(UpcomingMoviesFragment())
                 else -> {
+                    logInfo("default fragment")
                     replaceFragment(PopularMoviesFragment())
                 }
             }
             true
         }
-
         viewModelObservers()
     }
 

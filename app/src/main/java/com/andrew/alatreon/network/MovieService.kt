@@ -11,7 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class RetrofitService {
+class MovieService {
     companion object {
         /** Applying an interceptor in order to catch the logs of network operations to find out what is going on*/
         private val loggerInterceptor = HttpLoggingInterceptor().apply {

@@ -7,37 +7,61 @@ import androidx.lifecycle.viewModelScope
 import com.andrew.alatreon.model.Movie
 import com.andrew.alatreon.model.MovieDetail
 import com.andrew.alatreon.network.MovieApi
-import com.andrew.alatreon.network.RetrofitService
+import com.andrew.alatreon.network.MovieService
+import com.andrew.alatreon.util.Logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import okhttp3.Dispatcher
 
-class MainActivityViewModel: ViewModel() {
-    private var retrofitService: MovieApi = RetrofitService.getInstance()
+class MainActivityViewModel: ViewModel(), Logger {
+    // Declaring the retrofit service
+    private var retrofitService: MovieApi = MovieService.getInstance()
         .create(MovieApi::class.java)
-
-    private var _popularMovies = MutableLiveData<List<Movie>>()
-    val popularMovies: LiveData<List<Movie>>
+    // Declaring the liveData with encapsulation strategy
+    private var _popularMovies = MutableLiveData<ArrayList<Movie>>()
+    val popularMovies: LiveData<ArrayList<Movie>>
         get() = _popularMovies
-    private var _upcomingMovies = MutableLiveData<List<Movie>>()
-    val upcomingMovies: LiveData<List<Movie>>
+    private var _upcomingMovies = MutableLiveData<ArrayList<Movie>>()
+    val upcomingMovies: LiveData<ArrayList<Movie>>
         get() = _upcomingMovies
-    private var _topRatedMovies = MutableLiveData<List<Movie>>()
-    val topRatedMovies: LiveData<List<Movie>>
+    private var _topRatedMovies = MutableLiveData<ArrayList<Movie>>()
+    val topRatedMovies: LiveData<ArrayList<Movie>>
         get() = _topRatedMovies
     private var _movieDetails = MutableLiveData<MovieDetail>()
     val movieDetails: LiveData<MovieDetail>
         get() = _movieDetails
+    private var _errorMessage = MutableLiveData<Boolean>()
+    val errorLoading: LiveData<Boolean>
+        get() = _errorMessage
+    private var _loadingState = MutableLiveData<Boolean>()
+    val loadingState: LiveData<Boolean>
+        get() = _loadingState
 
 
 
+
+    /** Methods to get information about movies through the Movies Database API:
+     * popular, upcoming, top rated and movie details.
+     **/
     fun getPopularMovies() {
+        logInfo("Goes here")
+        _loadingState.value = true
         viewModelScope.launch {
             val results = withContext(Dispatchers.IO) {
                 retrofitService.getPopularMovies()
             }
-            _popularMovies.value = results.body()?.results
+            if(results.isSuccessful) {
+                _popularMovies.value = results.body()?.results
+                _loadingState.value = false
+                _errorMessage.value = false
+                logInfo(popularMovies.value.toString())
+            }
+            else {
+                logError(results.errorBody().toString())
+                _popularMovies.value = arrayListOf()
+                _loadingState.value = false
+                _errorMessage.value = true
+            }
         }
     }
 
@@ -46,16 +70,36 @@ class MainActivityViewModel: ViewModel() {
             val results = withContext(Dispatchers.IO) {
                 retrofitService.getUpcomingMovies()
             }
-            _upcomingMovies.value = results.body()?.results
+            if (results.isSuccessful) {
+                _upcomingMovies.value = results.body()?.results
+                _loadingState.value = false
+                _errorMessage.value = false
+            }
+            else {
+                _upcomingMovies.value = arrayListOf()
+                _loadingState.value = false
+                _errorMessage.value = true
+            }
+
         }
     }
 
     fun getTopRatedMovies() {
+        _loadingState.value = true
         viewModelScope.launch {
             val results = withContext(Dispatchers.IO) {
                 retrofitService.getTopRatedMovies()
             }
-            _topRatedMovies.value = results.body()?.results
+            if(results.isSuccessful) {
+                _topRatedMovies.value = results.body()?.results
+                _loadingState.value = false
+                _errorMessage.value = false
+            }
+            else {
+                _topRatedMovies.value = arrayListOf()
+                _loadingState.value = false
+                _errorMessage.value = true
+            }
         }
     }
 

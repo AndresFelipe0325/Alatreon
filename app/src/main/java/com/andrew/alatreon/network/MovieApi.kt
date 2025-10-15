@@ -20,6 +20,4 @@ interface MovieApi {
     @GET("/3/movie/{movie_id}")
     suspend fun getMovieDetails(@Path("movie_id") movieId: Int): Response<MovieDetail>
 
-
-
 }
