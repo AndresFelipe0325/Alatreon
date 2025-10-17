@@ -1,5 +1,6 @@
 package com.andrew.alatreon.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,10 +14,12 @@ import com.andrew.alatreon.util.loadImage
 class PopularMovieListAdapter(private var popularMovies: ArrayList<Movie>) :
     RecyclerView.Adapter<PopularMovieListAdapter.ViewHolder>(), Logger {
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updatePopularMovies(newPopularMovies: ArrayList<Movie>) {
         popularMovies.clear()
         popularMovies.addAll(newPopularMovies)
         notifyDataSetChanged()
+
     }
 
 

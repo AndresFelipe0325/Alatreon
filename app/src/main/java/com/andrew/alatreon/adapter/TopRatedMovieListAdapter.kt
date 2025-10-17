@@ -1,5 +1,6 @@
 package com.andrew.alatreon.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,7 @@ import com.andrew.alatreon.util.loadImage
 class TopRatedMovieListAdapter(private var topRatedMovies: ArrayList<Movie>) :
     RecyclerView.Adapter<TopRatedMovieListAdapter.ViewHolder>() {
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateTopRatedMovies(newTopRatedMovies: ArrayList<Movie>) {
         topRatedMovies.clear()
         topRatedMovies.addAll(newTopRatedMovies)

@@ -1,5 +1,6 @@
 package com.andrew.alatreon.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,7 @@ import com.andrew.alatreon.util.loadImage
 class UpcomingMovieListAdapter(private var upcomingMovies: ArrayList<Movie>) :
     RecyclerView.Adapter<UpcomingMovieListAdapter.ViewHolder>(){
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateUpcomingMovies(newUpcomingMovies: ArrayList<Movie>) {
         upcomingMovies.clear()
         upcomingMovies.addAll(newUpcomingMovies)
